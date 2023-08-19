@@ -48,6 +48,18 @@ resource "aws_instance" "practice_ec2" {
   }
   user_data = <<-EOF
               #!/bin/bash
+              # update
+              sudo yum update -y
+
+              # install git
+              sudo yum install git -y
+
+              # install docker
+              sudo amazon-linux-extras install docker -y
+              sudo service docker start
+              sudo usermod -a -G docker ec2-user
+
+              # install nodejs
               curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
               sudo yum install -y nodejs
               EOF
