@@ -14,7 +14,8 @@ terraform destroy -auto-approve
 ```
 
 ```:powershell
-git -v
 docker -v
+git -v
 node -v
+aws --version
 ```
